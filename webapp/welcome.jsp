@@ -95,6 +95,7 @@
         <p>Nom Arabe : <%= (String) session.getAttribute("nomArabe") %></p>
         <p>Nombre de congés : <%= session.getAttribute("congeJours") %></p>
         <a href="/stage/AfficherDemandesServlet"> Afficher mes demandes </a>
+        <a href="DownloadServlet" class="download-button">Télécharger le ficher Word</a>
     </div>
 
     <div class="container">

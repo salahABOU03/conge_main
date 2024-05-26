@@ -6,8 +6,90 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
-    <style>
-        /* Styles CSS */
+     <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('images/pro.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #333;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            width: 90%;
+            margin: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .accept-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .accept-button:hover {
+            background-color: #45a049;
+        }
+
+        .reject-button {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .reject-button:hover {
+            background-color: #e53935;
+        }
     </style>
 </head>
 <body>
