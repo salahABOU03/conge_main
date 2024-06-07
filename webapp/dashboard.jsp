@@ -1,11 +1,11 @@
-	<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
 <%@ page import="model.DemandeConge" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <title>  Dashboard RH Chef de division </title>
      <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -74,21 +74,21 @@
         }
 
         .accept-button {
-            background-color: #4CAF50;
+            background-color: #e74c3c;
             color: white;
         }
 
         .accept-button:hover {
-            background-color: #45a049;
+            background-color: #c0392b;
         }
 
         .reject-button {
-            background-color: #f44336;
+            background-color: #e74c3c;
             color: white;
         }
 
         .reject-button:hover {
-            background-color: #e53935;
+            background-color: #c0392b;
         }
     </style>
 </head>
@@ -123,8 +123,8 @@
                     <td><%= demande.getDuree() %></td>
                     <td><%= demande.getDateFin() %></td>
                     <td>
-                        <button onclick="confirmerDecision(<%= demande.getId() %>, 'accepter')">Accepter</button>
-                        <button onclick="confirmerDecision(<%= demande.getId() %>, 'refuser')">Refuser</button>
+                        <button class="accept-button" onclick="confirmerDecision(<%= demande.getId() %>, 'accepter')">Accepter</button>
+                        <button class="reject-button" onclick="confirmerDecision(<%= demande.getId() %>, 'refuser')">Refuser</button>
                     </td>
                 </tr>
                 <% 
@@ -150,4 +150,5 @@
             }
         }
     </script>
+</body>
 </html>

@@ -30,7 +30,7 @@ public class AccepterDemandeServlet extends HttpServlet {
             // Envoi d'un email au chef de division
             sendEmailToChefDivision();
 
-            response.sendRedirect("confirmation.jsp");
+            response.sendRedirect("confirmd.jsp");
         } catch (SQLException e) {
             e.printStackTrace();
             response.sendRedirect("error.jsp");

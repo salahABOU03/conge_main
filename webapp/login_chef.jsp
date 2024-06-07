@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Login Admin 1</title>
+    <title> Login pour chef de division </title>
     <style>
         body {
                       background-image: url('images/pro.jpg'); /* Chemin de votre image */
@@ -69,7 +69,7 @@
 
 <body>
     <div class="container">
-        <h2>Login Admin 1</h2>
+        <h2>Login pour chef de division</h2>
         <form action="admin1login" method="post" accept-charset="UTF-8">
             <label for="email">Email:</label>
             <input type="text" name="email" id="email" required>

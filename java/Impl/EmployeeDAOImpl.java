@@ -79,6 +79,46 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }*/
     
     @Override
+    public void ajouterEmploye(Employee employee) throws SQLException {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        
+        try {
+            connection = DBUtil.getConnection();
+            String query = "INSERT INTO Feuil1 (N°_PPR, nom_arabe, prenom_arabe, imputation_budgetaire, grade, conge_jr) VALUES (?, ?, ?, ?, ?, ?)";
+            statement = connection.prepareStatement(query);
+            statement.setDouble(1, employee.getNumeroPPR()); // Utilisation de setDouble ici
+            statement.setString(2, employee.getNomArabe());
+            statement.setString(3, employee.getPrenomArabe());
+            statement.setString(4, employee.getImputationBudgetaire());
+            statement.setString(5, employee.getGrade());
+            statement.setInt(6, employee.getCongeJours());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            // Gérer les erreurs
+            e.printStackTrace();
+            throw new SQLException("Erreur lors de l'ajout de l'employé", e);
+        } finally {
+            // Assurez-vous de fermer les ressources
+            if (statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    
+    @Override
     public void updateEmployee(Employee employee) throws SQLException {
         Connection connection = null;
         PreparedStatement statement = null;

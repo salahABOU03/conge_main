@@ -1,12 +1,12 @@
-	<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
 <%@ page import="model.DemandeConge" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
-     <style>
+    <title>Dashboard RH </title>
+    <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -83,12 +83,25 @@
         }
 
         .reject-button {
-            background-color: #f44336;
+            background-color: #e74c3c;
             color: white;
         }
 
         .reject-button:hover {
-            background-color: #e53935;
+            background-color: #c0392b;
+        }
+
+        .redirect-button {
+            background-color: #3498db;
+            color: white;
+            margin-top: 20px;
+            display: block;
+            text-align: center;
+            width: 100%;
+        }
+
+        .redirect-button:hover {
+            background-color: #2980b9;
         }
     </style>
 </head>
@@ -110,7 +123,6 @@
             </thead>
             <tbody>
                 <% 
-                     
                 List<DemandeConge> demandes = (List<DemandeConge>) request.getAttribute("demandes");
                 if (demandes != null && !demandes.isEmpty()) {
                     for (DemandeConge demande : demandes) {
@@ -124,8 +136,8 @@
                     <td><%= demande.getDuree() %></td>
                     <td><%= demande.getDateFin() %></td>
                     <td>
-                        <button onclick="confirmerDecision(<%= demande.getId() %>, 'accepter')">Accepter</button>
-                        <button onclick="confirmerDecision(<%= demande.getId() %>, 'refuser')">Refuser</button>
+                        <button class="accept-button" onclick="confirmerDecision(<%= demande.getId() %>, 'accepter')">Accepter</button>
+                        <button class="reject-button" onclick="confirmerDecision(<%= demande.getId() %>, 'refuser')">Refuser</button>
                     </td>
                 </tr>
                 <% 
@@ -140,6 +152,7 @@
                 %>
             </tbody>
         </table>
+        <button class="redirect-button" onclick="window.location.href='NewEmp.jsp'">Ajouter un nouveau Employée </button>
     </div>
 
     <!-- Script JavaScript pour la boîte de dialogue -->
@@ -150,6 +163,7 @@
                 window.location.href = action === 'accepter' ? "AccepterDemandeServlett?id=" + idDemande : "RefuserDemandeServlett?id=" + idDemande;
             }
         }
-      
-        </script>
+    </script>
+</body>
 </html>
+
